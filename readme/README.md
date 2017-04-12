@@ -27,7 +27,9 @@
 ### 创建公司模型
 在cn.sia.demo.springdata.jpa.domain.model包中创建Company.java文件。
 
-```
+这个文件定义了公司的基本模型，包括了公司ID以及公司名称: 
+
+```java
 package cn.sia.demo.springdata.jpa.domain.model;
 
 import javax.persistence.*;
@@ -78,7 +80,7 @@ public class Company {
 
 在cn.sia.demo.springdata.jpa.domain.model包中创建Department.java文件。
 
-```
+```java
 package cn.sia.demo.springdata.jpa.domain.model;
 
 import javax.persistence.Entity;
@@ -126,7 +128,7 @@ public class Department {
 
 在cn.sia.demo.springdata.jpa.domain.model包中创建Department.java文件。
 
-```
+```java
 package cn.sia.demo.springdata.jpa.domain.model;
 
 import javax.persistence.*;
