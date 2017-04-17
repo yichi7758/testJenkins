@@ -13,10 +13,14 @@
 ![create-3](img/create-3.png)
 
 * 输入工程信息:
-![create-4](img/create-4.png)
+![create-5](img/create-5.png)
+
+![create-6](img/create-6.png)
+
+![create-7](img/create-7.png)
 
 * 进入工程页面:
-![create-5](img/create-5.png)
+![create-8](img/create-8.png)
 
 到此，我们就创建了一个Spring Boot工程。
 
