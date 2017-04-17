@@ -29,7 +29,7 @@
 接下来，我们创建接入数据的基础模型，首先创建一个package: cn.sia.demo.springdata.jpa.domain.model
 
 ### 创建公司模型
-在cn.sia.demo.springdata.jpa.domain.model包中创建Company.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Company.java文件。
 
 这个文件定义了公司的基本模型，包括了公司ID以及公司名称:
 
@@ -81,7 +81,7 @@ public class Company {
 这样做不是必须的，但是会方便我们从程序上反向找到对应的用户信息。
 
 ### 创建部门模型
-在cn.sia.demo.springdata.jpa.domain.model包中创建Department.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Department.java文件。
 
 同Company模型类似，Department类定义了部门的基础模型，包括了ID以及名字属性。我们同样使用了mappedBy反向映射方便我们从Department对象中找到相应的Person。
 
@@ -131,7 +131,7 @@ public class Department {
 
 ### 创建人员模型
 
-在cn.sia.demo.springdata.jpa.domain.model包中创建Person.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Person.java文件。
 
 这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门。
 
@@ -234,11 +234,10 @@ public class Person {
 ## 创建数据仓库
 
 有了基本的业务对象模型之后，我们就可以给相应的对象创建仓库，用来进行数据库操作。
-创建cn.sia.demo.springdata.jpa.domain.repository包。
 
 ### 创建Company仓库
 
-在cn.sia.demo.springdata.jpa.domain.repository包下创建CompanyRepository.java接口
+创建cn.sia.demo.springdata.jpa.domain.repository.CompanyRepository.java接口
 
 CompanyRepository接口主要实现对Company数据库表的操作：
 
@@ -257,7 +256,7 @@ repository是数据库的接口，继承自CrudRepository，包含了诸如save,
 
 ### 创建Department仓库
 
-在cn.sia.demo.springdata.jpa.domain.repository包下创建DepartmentRepository.java接口
+创建cn.sia.demo.springdata.jpa.domain.repository.DepartmentRepository.java接口
 
 DepartmentRepository接口主要实现了对Department数据库表的操作：
 
@@ -276,7 +275,7 @@ public interface DepartmentRepository extends CrudRepository<Department, Long>{
 
 ### 创建Person仓库
 
-在cn.sia.demo.springdata.jpa.domain.repository包下创建PersonRepository.java接口
+创建cn.sia.demo.springdata.jpa.domain.repository.PersonRepository.java接口
 
 PersonRepository接口主要实现了对Person数据库的操作：
 
@@ -306,11 +305,11 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
 ## 创建服务
 
-接下来，我们对这些数据操作功能进行服务封装，创建cn.sia.demo.springdata.jpa.service包。
+接下来，我们对这些数据操作功能进行服务封装。
 
 ### 创建CompanyService
 
-在cn.sia.demo.springdata.jpa.service包下创建CompanyService.java。
+创建cn.sia.demo.springdata.jpa.service.CompanyService.java。
 
 CompanyService主要是对CompanyRepository进行封装，提供更高层的服务，这里面我们实现了对Company数据库的增删改查操作，并返回操作成功与否：
 
@@ -385,7 +384,7 @@ public class CompanyService implements BaseService {
 
 ### 创建DepartmentService
 
-在cn.sia.demo.springdata.jpa.service包下创建DepartmentService.java
+创建cn.sia.demo.springdata.jpa.service.DepartmentService.java
 
 DepartmentService主要是对DepartmentRepository进行封装，提供更高层的服务，这里面我们实现了对Department数据库的增删改查操作，并返回操作成功与否：
 
@@ -455,7 +454,7 @@ public class DepartmentService implements BaseService {
 
 ### 创建PersonService
 
-在cn.sia.demo.springdata.jpa.service包下创建PersonService.java
+创建cn.sia.demo.springdata.jpa.service.PersonService.java
 
 PersonService主要是对PersonRepository进行封装，提供更高层的服务，这里面我们实现了对Person数据库的增删改查以及一些特殊的查询操作，并返回操作成功与否：
 
@@ -633,9 +632,7 @@ public class DemoApplication {
 ## 编写测试
 
 ### 创建测试
-在test/java下创建cn.sia.demo.springdata.jpa.service包。
-
-在该包中创建CompanyServiceTests.java：
+在test/java下创建cn.sia.demo.springdata.jpa.service.CompanyServiceTests.java：
 
 ```java
 package cn.sia.demo.springdata.jpa.service;
