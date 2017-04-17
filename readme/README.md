@@ -9,13 +9,13 @@
 * 选择Spring Initializr:
 ![create-2](img/create-2.png)
 
-* 选择DevTools，Web，JPA，H2:
-![create-3](img/create-3.png)
-
 * 输入工程信息:
 ![create-5](img/create-5.png)
 
 ![create-6](img/create-6.png)
+
+* 选择DevTools，Web，JPA，H2:
+![create-3](img/create-3.png)
 
 ![create-7](img/create-7.png)
 
@@ -26,7 +26,7 @@
 
 ## 创建模型
 
-接下来，我们创建接入数据的基础模型，首先创建一个package: cn.sia.demo.springdata.jpa.domain.model
+接下来，我们创建接入数据的基础模型:
 
 ### 创建公司模型
 创建cn.sia.demo.springdata.jpa.domain.model.Company.java文件。
