@@ -135,6 +135,18 @@ public class Department {
 
 这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门。
 
+创建Gender类: cn.sia.demo.springdata.jpa.domain.model.Gender.java文件
+
+```java
+package cn.sia.demo.springdata.jpa.domain.model;
+
+
+public enum Gender {
+	MALE,
+	FEMALE
+}
+```
+
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.model;
@@ -306,6 +318,19 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 ## 创建服务
 
 接下来，我们对这些数据操作功能进行服务封装。
+
+### 创建服务接口
+
+创建cn.sia.demo.springdata.jpa.service.BaseService.java
+
+```java
+package cn.sia.demo.springdata.jpa.service;
+
+
+public interface BaseService {
+
+}
+```
 
 ### 创建CompanyService
 
