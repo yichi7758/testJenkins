@@ -591,7 +591,7 @@ public class PersonService implements BaseService {
 
 ### 添加数据库
 
-src/main/java/resources下创建文件夹db/migration:
+src/main/resources下创建文件夹db/migration:
 
 在该文件夹下创建文件：V1_0__init.sql
 
