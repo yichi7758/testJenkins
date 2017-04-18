@@ -589,6 +589,21 @@ public class PersonService implements BaseService {
 
 ## 简单测试
 
+### 修改配置文件
+
+修改src/main/resources/applicaiton.properties:
+
+```
+management.security.enabled=false
+spring.jpa.hibernate.ddl-auto=update
+spring.h2.console.enabled=true
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:mem:dbdemo
+spring.jpa.show-sql=false
+```
+
 ### 添加数据库
 
 src/main/resources下创建文件夹db/migration:
