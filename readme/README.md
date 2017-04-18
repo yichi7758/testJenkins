@@ -14,7 +14,7 @@
 
 ![create-6](img/create-6.png)
 
-* 选择DevTools，Web，JPA，H2:
+* 选择DevTools, Web, JPA, H2, flyway:
 ![create-3](img/create-3.png)
 
 ![create-7](img/create-7.png)
