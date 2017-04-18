@@ -131,10 +131,6 @@ public class Department {
 
 ### 创建人员模型
 
-创建cn.sia.demo.springdata.jpa.domain.model.Person.java文件。
-
-这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门。
-
 创建Gender类: cn.sia.demo.springdata.jpa.domain.model.Gender.java文件
 
 ```java
@@ -147,6 +143,9 @@ public enum Gender {
 }
 ```
 
+创建cn.sia.demo.springdata.jpa.domain.model.Person.java文件。
+
+这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门。
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.model;
