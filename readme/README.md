@@ -1,9 +1,10 @@
 # Spring Data JPA 教程
 
 
+
 ## 创建工程
 
-* 打开 IntelliJ IDEA， 选择创建新工程:
+* 打开 IntelliJ IDEA�?选择创建新工�?
 ![create-1](img/create-1.png)
 
 * 选择Spring Initializr:
@@ -22,14 +23,14 @@
 * 进入工程页面:
 ![create-8](img/create-8.png)
 
-到此，我们就创建了一个Spring Boot工程。
+到此，我们就创建了一个Spring Boot工程�?
 
 ## 创建模型
 
 接下来，我们创建接入数据的基础模型:
 
 ### 创建公司模型
-创建cn.sia.demo.springdata.jpa.domain.model.Company.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Company.java文件�?
 
 这个文件定义了公司的基本模型，包括了公司ID以及公司名称:
 
@@ -77,13 +78,13 @@ public class Company {
 }
 ```
 
-这是一个基本的@Entity模型，@Id表示主键，默认构造函数是JPA必须的，另外我们声明了一系列的accessor方法。@OneToMany表示一个company可以对应多个用户，mappedBy表示反向映射，这样我们就可以从Company对象中找到Person。
-这样做不是必须的，但是会方便我们从程序上反向找到对应的用户信息。
+这是一个基本的@Entity模型，@Id表示主键，默认构造函数是JPA必须的，另外我们声明了一系列的accessor方法。@OneToMany表示一个company可以对应多个用户，mappedBy表示反向映射，这样我们就可以从Company对象中找到Person�?
+这样做不是必须的，但是会方便我们从程序上反向找到对应的用户信息�?
 
 ### 创建部门模型
-创建cn.sia.demo.springdata.jpa.domain.model.Department.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Department.java文件�?
 
-同Company模型类似，Department类定义了部门的基础模型，包括了ID以及名字属性。我们同样使用了mappedBy反向映射方便我们从Department对象中找到相应的Person。
+同Company模型类似，Department类定义了部门的基础模型，包括了ID以及名字属性。我们同样使用了mappedBy反向映射方便我们从Department对象中找到相应的Person�?
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.model;
@@ -131,7 +132,7 @@ public class Department {
 
 ### 创建人员模型
 
-创建Gender类: cn.sia.demo.springdata.jpa.domain.model.Gender.java文件
+创建Gender�? cn.sia.demo.springdata.jpa.domain.model.Gender.java文件
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.model;
@@ -143,9 +144,9 @@ public enum Gender {
 }
 ```
 
-创建cn.sia.demo.springdata.jpa.domain.model.Person.java文件。
+创建cn.sia.demo.springdata.jpa.domain.model.Person.java文件�?
 
-这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门。
+这个文件定义了基本的用户模型，包括了ID，名字，生日，性别，电话，所属公司，以及所属部门�?
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.model;
@@ -244,7 +245,7 @@ public class Person {
 
 ## 创建数据仓库
 
-有了基本的业务对象模型之后，我们就可以给相应的对象创建仓库，用来进行数据库操作。
+有了基本的业务对象模型之后，我们就可以给相应的对象创建仓库，用来进行数据库操作�?
 
 ### 创建Company仓库
 
@@ -263,7 +264,7 @@ public interface CompanyRepository extends CrudRepository<Company, Long> {
 }
 ```
 
-repository是数据库的接口，继承自CrudRepository，包含了诸如save, delete, findOne, findAll等方法。通过Spring Data JPA，这个接口同样可以实现一些基础的查询功能，比如通过属性查询：findByATTR()。例如，这里我们定义了 public findByName(String name), 通过Spring Data JPA，它可以自动实现这个方法，我们就不必具体提供query实现了。
+repository是数据库的接口，继承自CrudRepository，包含了诸如save, delete, findOne, findAll等方法。通过Spring Data JPA，这个接口同样可以实现一些基础的查询功能，比如通过属性查询：findByATTR()。例如，这里我们定义�?public findByName(String name), 通过Spring Data JPA，它可以自动实现这个方法，我们就不必具体提供query实现了�?
 
 ### 创建Department仓库
 
@@ -282,13 +283,13 @@ public interface DepartmentRepository extends CrudRepository<Department, Long>{
 }
 ```
 
-这里面我们没有定义任何接口函数，所以默认情况下，它只包含CrudRepository自带的函数，详情参照CrudRepository API。
+这里面我们没有定义任何接口函数，所以默认情况下，它只包含CrudRepository自带的函数，详情参照CrudRepository API�?
 
 ### 创建Person仓库
 
 创建cn.sia.demo.springdata.jpa.domain.repository.PersonRepository.java接口
 
-PersonRepository接口主要实现了对Person数据库的操作：
+PersonRepository接口主要实现了对Person数据库的操作�?
 
 ```java
 package cn.sia.demo.springdata.jpa.domain.repository;
@@ -312,11 +313,11 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 }
 ```
 
-可以看到我们定义了两个JPA自动实现的方法：findByBirthdayBefore以及findByCompany，注意：如果我们没有在接口里定义这两个方法，JPA是不会自动提供这两个方法的实现的。 同时，我们也提供了一个基于Query的查询方法，使用@Query注解，我们可以提供相应的SQL语句进行数据库查询。
+可以看到我们定义了两个JPA自动实现的方法：findByBirthdayBefore以及findByCompany，注意：如果我们没有在接口里定义这两个方法，JPA是不会自动提供这两个方法的实现的�?同时，我们也提供了一个基于Query的查询方法，使用@Query注解，我们可以提供相应的SQL语句进行数据库查询�?
 
 ## 创建服务
 
-接下来，我们对这些数据操作功能进行服务封装。
+接下来，我们对这些数据操作功能进行服务封装�?
 
 ### 创建服务接口
 
@@ -333,9 +334,9 @@ public interface BaseService {
 
 ### 创建CompanyService
 
-创建cn.sia.demo.springdata.jpa.service.CompanyService.java。
+创建cn.sia.demo.springdata.jpa.service.CompanyService.java�?
 
-CompanyService主要是对CompanyRepository进行封装，提供更高层的服务，这里面我们实现了对Company数据库的增删改查操作，并返回操作成功与否：
+CompanyService主要是对CompanyRepository进行封装，提供更高层的服务，这里面我们实现了对Company数据库的增删改查操作，并返回操作成功与否�?
 
 ```java
 package cn.sia.demo.springdata.jpa.service;
@@ -404,13 +405,13 @@ public class CompanyService implements BaseService {
 }
 ```
 
-这里Autowired是告诉Spring自动装配一个CompanyRepository，然后我们使用这个仓库进行下面的操作。
+这里Autowired是告诉Spring自动装配一个CompanyRepository，然后我们使用这个仓库进行下面的操作�?
 
 ### 创建DepartmentService
 
 创建cn.sia.demo.springdata.jpa.service.DepartmentService.java
 
-DepartmentService主要是对DepartmentRepository进行封装，提供更高层的服务，这里面我们实现了对Department数据库的增删改查操作，并返回操作成功与否：
+DepartmentService主要是对DepartmentRepository进行封装，提供更高层的服务，这里面我们实现了对Department数据库的增删改查操作，并返回操作成功与否�?
 
 ```java
 package cn.sia.demo.springdata.jpa.service;
@@ -474,13 +475,13 @@ public class DepartmentService implements BaseService {
 	}
 }
 ```
-与CompanyService类似，基本实现了增删改查功能。
+与CompanyService类似，基本实现了增删改查功能�?
 
 ### 创建PersonService
 
 创建cn.sia.demo.springdata.jpa.service.PersonService.java
 
-PersonService主要是对PersonRepository进行封装，提供更高层的服务，这里面我们实现了对Person数据库的增删改查以及一些特殊的查询操作，并返回操作成功与否：
+PersonService主要是对PersonRepository进行封装，提供更高层的服务，这里面我们实现了对Person数据库的增删改查以及一些特殊的查询操作，并返回操作成功与否�?
 
 ```java
 package cn.sia.demo.springdata.jpa.service;
@@ -587,7 +588,7 @@ public class PersonService implements BaseService {
 }
 ```
 
-## 简单测试
+## 简单测�?
 
 ### 修改配置文件
 
@@ -604,7 +605,7 @@ spring.datasource.url=jdbc:h2:mem:dbdemo
 spring.jpa.show-sql=false
 ```
 
-### 添加数据库
+### 添加数据�?
 
 src/main/resources下创建文件夹db/migration:
 
@@ -675,9 +676,9 @@ INSERT INTO PERSON(id, name, birthday, gender, phone, company_id, department_id)
 ```
 
 ### 修改DemoApplication文件
-接下来我们进行简单的测试编写，修改cn.sia.demo.springdata.jpa包下的DemoApplication.java文件：
+接下来我们进行简单的测试编写，修改cn.sia.demo.springdata.jpa包下的DemoApplication.java文件�?
 
-这个文件是Spring Boot工程的入口，包含了一个main函数，通过@SpringBootApplication实现定义了整个工程Bean配置以及包扫描的方式。
+这个文件是Spring Boot工程的入口，包含了一个main函数，通过@SpringBootApplication实现定义了整个工程Bean配置以及包扫描的方式�?
 
 ```java
 package cn.sia.demo.springdata.jpa;
@@ -726,7 +727,7 @@ public class DemoApplication {
 }
 ```
 
-这里我们注入了一个CommandLineRunner Bean，在这个Bean的回调函数中，我们注入了三个repository，在函数体中，我们进行Person查找，以及过滤函数的调用，通过控制台输出我们可以查看程序是否基本按照我们预期执行。
+这里我们注入了一个CommandLineRunner Bean，在这个Bean的回调函数中，我们注入了三个repository，在函数体中，我们进行Person查找，以及过滤函数的调用，通过控制台输出我们可以查看程序是否基本按照我们预期执行�?
 
 ### 配置运行
 * 选择Run->Edit Configurations
@@ -734,14 +735,14 @@ public class DemoApplication {
 * 选择Main class以及classpath module
 ![boot-config](img/boot-config.png)
 
-配置好之后，我们就可以运行,可以看到控制台输出了相应的log:
+配置好之后，我们就可以运�?可以看到控制台输出了相应的log:
 ![boot-run](img/boot-run.png)
 
 
 ## 编写测试
 
 ### 创建测试
-在test/java下创建cn.sia.demo.springdata.jpa.service.CompanyServiceTests.java：
+在test/java下创建cn.sia.demo.springdata.jpa.service.CompanyServiceTests.java�?
 
 ```java
 package cn.sia.demo.springdata.jpa.service;
@@ -831,8 +832,8 @@ public class CompanyServiceTests {
 }
 ```
 
-这里我们也是注入一个CustomerService对象，然后所有的测试都是通过CustomerService运行的。@Test表示一个测试。
-Spring Boot测试是基于JUnit测试，我们同样可以注入一些Mock函数，伪造一些依赖的对象行为，这里我们只涉及到基础数据库操作，所以并未用到。
+这里我们也是注入一个CustomerService对象，然后所有的测试都是通过CustomerService运行的。@Test表示一个测试�?
+Spring Boot测试是基于JUnit测试，我们同样可以注入一些Mock函数，伪造一些依赖的对象行为，这里我们只涉及到基础数据库操作，所以并未用到�?
 
 ### 运行测试
 
@@ -844,7 +845,7 @@ Spring Boot测试是基于JUnit测试，我们同样可以注入一些Mock函数
 
 ### 查看code coverage
 
-点击如图中所示的红圆圈中的按钮，我们可以查看当前测试的覆盖率：
+点击如图中所示的红圆圈中的按钮，我们可以查看当前测试的覆盖率�?
 ![code-coverage](img/code-coverage.png)
 
 
