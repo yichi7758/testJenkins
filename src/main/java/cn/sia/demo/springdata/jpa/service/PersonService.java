@@ -35,7 +35,7 @@ public class PersonService implements BaseService {
 		return people;
 	}
 
-	//public Person search(Long id) {
+	public Person search(Long id) {
 		Person p = pr.findOne(id);
 		return p;
 	}
