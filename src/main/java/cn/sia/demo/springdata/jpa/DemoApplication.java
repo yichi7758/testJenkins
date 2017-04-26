@@ -21,7 +21,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
+	//@Bean
 	CommandLineRunner demo(CompanyRepository cr, DepartmentRepository dr, PersonRepository pr) {
 		return (args) -> {
 			List<Person> people = pr.findByLastName("wang");
